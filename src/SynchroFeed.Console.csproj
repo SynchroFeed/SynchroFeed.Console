@@ -71,7 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CompanyAssemblyInfo.cs">
+    <Compile Include="..\CompanyAssemblyInfo.cs">
       <Link>Properties\CompanyAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ConsoleCommandLine.cs" />
@@ -82,9 +82,11 @@
     <None Include="App.config" />
     <None Include="App.Debug.config">
       <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App.Release.config">
       <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -92,49 +94,10 @@
     <None Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="README.md" />
+    <None Include="SynchroFeed.Console.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SynchroFeed.Action.Process\SynchroFeed.Action.Process.csproj">
-      <Project>{2af80bd6-ab71-4890-9d96-38c68cc7f51d}</Project>
-      <Name>SynchroFeed.Action.Process</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Action.Sync\SynchroFeed.Action.Sync.csproj">
-      <Project>{17ea72fa-b334-4fc7-9daa-4ec70ecb0205}</Project>
-      <Name>SynchroFeed.Action.Sync</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.ActionObserver.WebPost\SynchroFeed.ActionObserver.WebPost.csproj">
-      <Project>{2accd972-8bf1-494e-997f-a31a8b86f415}</Project>
-      <Name>SynchroFeed.ActionObserver.WebPost</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Command.ApplicationIs64bit\SynchroFeed.Command.ApplicationIs64bit.csproj">
-      <Project>{7569f829-f3d8-4643-98a6-dbf87f41165c}</Project>
-      <Name>SynchroFeed.Command.ApplicationIs64bit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Command.Catalog\SynchroFeed.Command.Catalog.csproj">
-      <Project>{c8b95609-4b3d-44a8-9f9a-abb352e83327}</Project>
-      <Name>SynchroFeed.Command.Catalog</Name>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Library\SynchroFeed.Library.csproj">
-      <Project>{dd82ce9d-7037-4a40-88c2-5b0b02e6bcd8}</Project>
-      <Name>SynchroFeed.Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Repository.Directory\SynchroFeed.Repository.Directory.csproj">
-      <Project>{bb452e80-be2c-44c9-ad7f-5b79fd6f9868}</Project>
-      <Name>SynchroFeed.Repository.Directory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Repository.Nuget\SynchroFeed.Repository.Nuget.csproj">
-      <Project>{9a04fbbf-4748-420f-bc9e-9cd3c2cf8e76}</Project>
-      <Name>SynchroFeed.Repository.Nuget</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SynchroFeed.Repository.Proget\SynchroFeed.Repository.Proget.csproj">
-      <Project>{1d475789-4665-46f8-a3cd-5aa972e61de5}</Project>
-      <Name>SynchroFeed.Repository.Proget</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
@@ -173,6 +136,30 @@
     <PackageReference Include="SharpZipLib">
       <Version>1.0.0</Version>
     </PackageReference>
+    <PackageReference Include="SynchroFeed.Action.Process">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.ActionObserver.WebPost">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.Command.ApplicationIs64bit">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.Command.Catalog">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.Library">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.Repository.Directory">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.Repository.Nuget">
+      <Version>0.0.12</Version>
+    </PackageReference>
+    <PackageReference Include="SynchroFeed.Repository.Proget">
+      <Version>0.0.12</Version>
+    </PackageReference>
     <PackageReference Include="System.Buffers">
       <Version>4.5.0</Version>
     </PackageReference>
@@ -188,4 +175,9 @@
   <Target Name="AfterBuild">
     <TransformXml Source="@(AppConfigWithTargetPath)" Transform="$(ProjectConfigTransformFileName)" Destination="@(AppConfigWithTargetPath->'$(OutDir)%(TargetPath)')" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>if NOT EXIST "$(ProjectDir)App.Release.config" (
+    COPY "$(ProjectDir)App.Template.config" "$(ProjectDir)App.Release.config"
+)</PreBuildEvent>
+  </PropertyGroup>
 </Project>
