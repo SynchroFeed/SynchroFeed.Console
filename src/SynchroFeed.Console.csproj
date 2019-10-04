@@ -103,34 +103,34 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
-      <Version>6.3.0-preview9-19423-04</Version>
+      <Version>6.3.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp">
-      <Version>4.5.0</Version>
+      <Version>4.6.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils">
       <Version>1.1.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Xml">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Hosting">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Console">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug">
-      <Version>2.2.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="NLog.Extensions.Logging">
       <Version>1.5.4</Version>
@@ -138,26 +138,26 @@
     <PackageReference Include="SharpZipLib">
       <Version>1.2.0</Version>
     </PackageReference>
-    <PackageReference Include="SynchroFeed.Action.Process" Version="0.0.83" />
+    <PackageReference Include="SynchroFeed.Action.Process" Version="0.0.87" />
     <PackageReference Include="SynchroFeed.Action.Sync">
-      <Version>0.0.83</Version>
+      <Version>0.0.87</Version>
     </PackageReference>
-    <PackageReference Include="SynchroFeed.ActionObserver.WebPost" Version="0.0.83" />
-    <PackageReference Include="SynchroFeed.Command.ApplicationIs64bit" Version="0.0.83" />
-    <PackageReference Include="SynchroFeed.Command.Catalog" Version="0.0.83" />
+    <PackageReference Include="SynchroFeed.ActionObserver.WebPost" Version="0.0.87" />
+    <PackageReference Include="SynchroFeed.Command.ApplicationIs64bit" Version="0.0.87" />
+    <PackageReference Include="SynchroFeed.Command.Catalog" Version="0.0.87" />
     <PackageReference Include="SynchroFeed.Command.Log4netReview">
-      <Version>0.0.83</Version>
+      <Version>0.0.87</Version>
     </PackageReference>
     <PackageReference Include="SynchroFeed.Command.NugetContainsSupportFiles">
-      <Version>0.0.83</Version>
+      <Version>0.0.87</Version>
     </PackageReference>
     <PackageReference Include="SynchroFeed.Command.VersioningCheck">
-      <Version>0.0.83</Version>
+      <Version>0.0.87</Version>
     </PackageReference>
-    <PackageReference Include="SynchroFeed.Library" Version="0.0.83" />
-    <PackageReference Include="SynchroFeed.Repository.Directory" Version="0.0.83" />
-    <PackageReference Include="SynchroFeed.Repository.Nuget" Version="0.0.83" />
-    <PackageReference Include="SynchroFeed.Repository.Proget" Version="0.0.83" />
+    <PackageReference Include="SynchroFeed.Library" Version="0.0.87" />
+    <PackageReference Include="SynchroFeed.Repository.Directory" Version="0.0.87" />
+    <PackageReference Include="SynchroFeed.Repository.Nuget" Version="0.0.87" />
+    <PackageReference Include="SynchroFeed.Repository.Proget" Version="0.0.87" />
     <PackageReference Include="System.Buffers">
       <Version>4.5.0</Version>
     </PackageReference>
