@@ -25,7 +25,6 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
-using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.CommandLineUtils;
 
