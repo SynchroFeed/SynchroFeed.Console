@@ -290,3 +290,4 @@ __pycache__/
 # Release Config Files
 App.Release.Config
 App.*.json
+**/Catalog.alkami.json
