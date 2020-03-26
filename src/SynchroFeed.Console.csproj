@@ -8,8 +8,7 @@
     <BuildDependsOn>$(BuildDependsOn);AfterBuildMigrated</BuildDependsOn>
     <Authors>Bob Vandehey</Authors>
     <PackageId>SynchroFeed.Console</PackageId>
-    <PackageLicenseUrl>
-    </PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/SynchroFeed/SynchroFeed.Console</PackageProjectUrl>
     <PackageTags>nuget chocolately sync feed package catalog</PackageTags>
   </PropertyGroup>
@@ -24,16 +23,30 @@
     <StartupObject>SynchroFeed.Console.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
+    <ProjectConfigFileName>App.config</ProjectConfigFileName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
     <ApplicationIcon>synchrofeed.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <PackageIcon>SynchroFeed.png</PackageIcon>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Target Name="AfterBuildMigrated">
+    <TransformXml Source="@(AppConfigWithTargetPath)" Transform="$(ProjectConfigTransformFileName)" Destination="@(AppConfigWithTargetPath->'$(OutDir)%(TargetPath)')" />
+  </Target>
   <ItemGroup>
     <Compile Include="..\CompanyAssemblyInfo.cs" Link="Properties\CompanyAssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\SynchroFeed.png">
       <Pack>True</Pack>
-      <PackagePath>
-      </PackagePath>
+      <PackagePath></PackagePath>
     </None>
     <None Include="App.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
