@@ -1,0 +1,20 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+ 
+<Include details of how to verify checksum contents>
+<If software vendor, explain that here - checksum verification instructions are optional>
+This package is published by the SynchroFeed Project itself. Any binaries will be 
+identical to other package types published by the project such as the following
+Nuget packages:
+
+- SynchroFeed.Library
+- SynchroFeed.Repository.Directory
+- SynchroFeed.Repository.Proget
+- SynchroFeed.Repository.Nuget
+- SynchroFeed.Action.Process
+- SynchroFeed.Action.Sync
+- SynchroFeed.Command.Catalog
+- SynchroFeed.Command.ApplicationIs64bit
+- SynchroFeed.Command.VersioningCheck
+- SynchroFeed.Command.Log4netReview

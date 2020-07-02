@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>SynchroFeed.Console</id>
+    <version>1.0.1</version>
+    <owners>Bob Vandehey</owners>
+    <!-- This section is about the software itself -->
+    <title>SynchroFeed Console program</title>
+    <authors>Bob Vandehey, Andrew Rissing</authors>
+    <packageSourceUrl>https://github.com/SynchroFeed/SynchroFeed.Console</packageSourceUrl>
+    <projectUrl>https://github.com/SynchroFeed/SynchroFeed.Console</projectUrl>
+    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+    <iconUrl>https://raw.githubusercontent.com/SynchroFeed/SynchroFeed.Console/main/synchrofeed.ico</iconUrl>
+    <copyright>2020 Bob Vandehey</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/SynchroFeed/SynchroFeed.Console/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>SynchroFeed Console nuget chocolatey replication</tags>
+    <description>SynchroFeed is an extensible framework written in Microsoft .NET C# for integrating with a Nuget-like feed. The Console program is a command line program that exposes the features of the SynchroFeed Library through configuration.</description>
+    <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="src\bin\Release\net48\publish\**" target="tools" />
+  </files>
+</package>

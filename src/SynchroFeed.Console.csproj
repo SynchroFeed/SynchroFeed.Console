@@ -8,10 +8,9 @@
     <BuildDependsOn>$(BuildDependsOn);AfterBuildMigrated</BuildDependsOn>
     <Authors>Bob Vandehey</Authors>
     <PackageId>SynchroFeed.Console</PackageId>
-    <PackageLicenseUrl>
-    </PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/SynchroFeed/SynchroFeed.Console</PackageProjectUrl>
     <PackageTags>nuget chocolately sync feed package catalog</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -34,9 +33,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageIcon>SynchroFeed.png</PackageIcon>
-    <PackageLicenseFile>
-    </PackageLicenseFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <Target Name="AfterBuildMigrated">
     <TransformXml Source="@(AppConfigWithTargetPath)" Transform="$(ProjectConfigTransformFileName)" Destination="@(AppConfigWithTargetPath->'$(OutDir)%(TargetPath)')" />
