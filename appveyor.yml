@@ -31,6 +31,6 @@ after_build:
 
     choco pack --version $env:APPVEYOR_BUILD_VERSION
 
-    choco push SynchroFeed.Console.$env:APPVEYOR_BUILD_VERSION.nupkg --source https://push.chocolatey.org/ --api-key $env:CHOCOLATEY_API_KEY
+    # choco push SynchroFeed.Console.$env:APPVEYOR_BUILD_VERSION.nupkg --source https://push.chocolatey.org/ --api-key $env:CHOCOLATEY_API_KEY
 artifacts:
 - path: '*.zip'
