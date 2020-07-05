@@ -45,4 +45,3 @@ deploy:
   prerelease: false
   on:
     branch: main
-    APPVEYOR_REPO_TAG: true
