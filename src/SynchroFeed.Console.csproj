@@ -7,10 +7,6 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <BuildDependsOn>$(BuildDependsOn);AfterBuildMigrated</BuildDependsOn>
     <Authors>Bob Vandehey</Authors>
-    <PackageId>SynchroFeed.Console</PackageId>
-    <PackageProjectUrl>https://github.com/SynchroFeed/SynchroFeed.Console</PackageProjectUrl>
-    <PackageTags>nuget chocolately sync feed package catalog</PackageTags>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>

@@ -1,0 +1,31 @@
+version: 1.0.{build}
+branches:
+  only:
+  - main
+image: Visual Studio 2019
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+before_build:
+- cmd: nuget restore
+build:
+  publish_nuget: true
+  include_nuget_references: true
+  publish_core_console: true
+  verbosity: minimal
+after_build:
+- ps: >-
+    Compress-Archive -Path src\bin\Release\net48\publish\ -DestinationPath .\SynchroFeed.Console-$env:APPVEYOR_BUILD_VERSION.zip
+    $archiveHash = Get-FileHash -Path .\SynchroFeed.Console-$env:APPVEYOR_BUILD_VERSION.zip
+    (((Get-Content -path .\legal\VERIFICATION-template.txt -Raw) -replace '{ArchiveHash}',$archiveHash.Hash)) -replace '{PackageVersion}', $env:APPVEYOR_BUILD_VERSION | Set-Content -Path .\legal\VERIFICATION.txt
+deploy:
+- provider: NuGet
+  server: https://push.chocolatey.org/
+  api_key:
+    secure: ii++/bG3kImf27812Cdx1P7qlzMiBrlnNm9KkG4V5YIrgfQ/mnw6iLxK4+J1+ZjA
+  skip_symbols: true
+  on:
+    branch: main

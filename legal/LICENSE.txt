@@ -1,3 +1,5 @@
+From: https://rawcdn.githack.com/SynchroFeed/SynchroFeed.Console/b1e49bb245fa2ce0298fe6ce820162dd9df75e0c/LICENSE
+
 MIT License
 
 Copyright (c) 2018 Robert Vandehey
