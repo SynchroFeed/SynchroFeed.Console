@@ -3,6 +3,9 @@ branches:
   only:
   - main
 image: Visual Studio 2019
+environment:
+  CHOCOLATEY_API_KEY:
+    secure: ii++/bG3kImf27812Cdx1P7qlzMiBrlnNm9KkG4V5YIrgfQ/mnw6iLxK4+J1+ZjA
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
@@ -12,20 +15,20 @@ assembly_info:
 before_build:
 - cmd: nuget restore
 build:
-  publish_nuget: true
-  include_nuget_references: true
-  publish_core_console: true
+  publish_nuget: false
+  include_nuget_references: false
+  publish_core_console: false
   verbosity: minimal
 after_build:
 - ps: >-
+    dotnet publish --configuration Release
+
     Compress-Archive -Path src\bin\Release\net48\publish\ -DestinationPath .\SynchroFeed.Console-$env:APPVEYOR_BUILD_VERSION.zip
+
     $archiveHash = Get-FileHash -Path .\SynchroFeed.Console-$env:APPVEYOR_BUILD_VERSION.zip
+
     (((Get-Content -path .\legal\VERIFICATION-template.txt -Raw) -replace '{ArchiveHash}',$archiveHash.Hash)) -replace '{PackageVersion}', $env:APPVEYOR_BUILD_VERSION | Set-Content -Path .\legal\VERIFICATION.txt
-deploy:
-- provider: NuGet
-  server: https://push.chocolatey.org/
-  api_key:
-    secure: ii++/bG3kImf27812Cdx1P7qlzMiBrlnNm9KkG4V5YIrgfQ/mnw6iLxK4+J1+ZjA
-  skip_symbols: true
-  on:
-    branch: main
+
+    choco pack -Version $env:APPVEYOR_BUILD_VERSION
+
+    choco push SynchroFeed.Console.1.0.1.nupkg --source https://push.chocolatey.org/choco -Version $env:APPVEYOR_BUILD_VERSION --api-key $env:CHOCOLATEY_API_KEY
