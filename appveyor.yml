@@ -3,6 +3,7 @@ branches:
   only:
   - main
 image: Visual Studio 2019
+skip_tags: true
 environment:
   CHOCOLATEY_API_KEY:
     secure: ii++/bG3kImf27812Cdx1P7qlzMiBrlnNm9KkG4V5YIrgfQ/mnw6iLxK4+J1+ZjA
@@ -30,7 +31,6 @@ after_build:
     (((Get-Content -path .\legal\VERIFICATION-template.txt -Raw) -replace '{ArchiveHash}',$archiveHash.Hash)) -replace '{PackageVersion}', $env:APPVEYOR_BUILD_VERSION | Set-Content -Path .\legal\VERIFICATION.txt
 
     choco pack --version $env:APPVEYOR_BUILD_VERSION
-
-    # choco push SynchroFeed.Console.$env:APPVEYOR_BUILD_VERSION.nupkg --source https://push.chocolatey.org/ --api-key $env:CHOCOLATEY_API_KEY
 artifacts:
 - path: '*.zip'
+- path: '*.nuspec'
