@@ -33,4 +33,4 @@ after_build:
     choco pack --version $env:APPVEYOR_BUILD_VERSION
 artifacts:
 - path: '*.zip'
-- path: '*.nuspec'
+- path: '*.nupkg'
