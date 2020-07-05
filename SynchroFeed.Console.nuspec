@@ -11,7 +11,7 @@
 		<iconUrl>https://rawcdn.githack.com/SynchroFeed/SynchroFeed.Console/b1e49bb245fa2ce0298fe6ce820162dd9df75e0c/SynchroFeed.png</iconUrl>
 		<mailingListUrl>https://synchrofeed.slack.com/</mailingListUrl>
 		<bugTrackerUrl>https://github.com/SynchroFeed/SynchroFeed.Console/issues</bugTrackerUrl>
-		<docsUrl>https://github.com/SynchroFeed/SynchroFeed.Console/README.md</docsUrl>
+		<docsUrl>https://github.com/SynchroFeed/SynchroFeed.Console/blob/main/README.md</docsUrl>
 		<copyright>2020 Bob Vandehey</copyright>
 		<licenseUrl>https://rawcdn.githack.com/SynchroFeed/SynchroFeed.Console/b1e49bb245fa2ce0298fe6ce820162dd9df75e0c/LICENSE</licenseUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
