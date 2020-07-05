@@ -1,4 +1,8 @@
 # SynchroFeed Console
+[![Slack](https://a.slack-edge.com/66f9/img/landing/header_logo_sprite.png)](https://synchrofeed.slack.com/)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/b9wwy1xemocykl2v/branch/main?svg=true)](https://ci.appveyor.com/project/bvandehey/synchrofeed-core/branch/main)
+
 *SynchroFeed* is an extensible framework written in Microsoft .NET C# for integrating with a Nuget-like feed. 
 The *Console* program is a command line program that exposes the features of the *SynchroFeed* *Library* through 
 configuration.
