@@ -27,6 +27,7 @@
 #endregion
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -50,7 +51,7 @@ namespace SynchroFeed.Console
         public static void Main(string[] args)
         {
             var commandLineApp = new ConsoleCommandLine();
-            commandLineApp.OnExecute(() => Execute(commandLineApp));
+            commandLineApp.OnExecute(() => ExecuteAsync(commandLineApp));
             commandLineApp.Execute(args);
         }
 
@@ -59,7 +60,7 @@ namespace SynchroFeed.Console
         /// </summary>
         /// <param name="commandLineApp">The command line application containing the parsed command line parameters.</param>
         /// <returns>System.Int32.</returns>
-        private static int Execute(ConsoleCommandLine commandLineApp)
+        private static async Task<int> ExecuteAsync(ConsoleCommandLine commandLineApp)
         {
             try
             {
@@ -74,7 +75,7 @@ namespace SynchroFeed.Console
                 try
                 {
                     var actionProcessor = host.Services.GetRequiredService<IActionProcessor>();
-                    actionProcessor.Execute(commandLineApp.Actions);
+                    await actionProcessor.ExecuteAsync(commandLineApp.Actions);
                 }
                 finally
                 {
