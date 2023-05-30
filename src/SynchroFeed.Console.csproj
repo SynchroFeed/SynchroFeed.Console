@@ -21,7 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
     <PackageReference Include="NLog.Extensions.Logging" Version="5.2.5" />
     <PackageReference Include="SynchroFeed.Action.Process" Version="3.1.2" />
     <PackageReference Include="SynchroFeed.Action.Sync" Version="3.1.2" />
